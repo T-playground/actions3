@@ -27,7 +27,7 @@ jobs:
       - name: 'Run baidu_speed'
         if: env.BAIDU_COOKIE
         run: |
-          node ~/Scripts/baidu_speed.js
+          node ~/Scripts/Task/baidu_speed.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
