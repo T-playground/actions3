@@ -11,8 +11,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     env:
         COOKIES_SPLIT: ${{ secrets.COOKIES_SPLIT }}
-        QQREADAPP_HEADER: ${{ secrets.QQREADAPP_HEADER  }}
-        QQREADAPP_VIDEOHD: ${{ secrets.QQREADAPP_VIDEOHD }}
+        QQ_QQreadURL: ${{ secrets.QQ_QQreadURL  }}
     steps:
       - name: Clone
         run: |
@@ -26,7 +25,7 @@ jobs:
           cd ~/JavaScript
           npm install
       - name: 'Run QQread'
-        if: env.QQREADAPP_HEADER
+        if: env.QQ_QQreadURL
         run: |
           cd ~/JavaScript
           node Task/QQread.js
