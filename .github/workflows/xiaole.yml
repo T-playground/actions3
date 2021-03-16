@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/T-playground/ziye/ZIYE.git ~/JavaScript
+          git clone https://github.com/T-playground/ziye.git ~/JavaScript
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -29,6 +29,7 @@ jobs:
         if: env.XL_URL
         run: |
           cd ~/JavaScript
+          git checkout ZIYE
           npm install
       - name: 'RUN [xiaole]'
         if: env.XL_URL
